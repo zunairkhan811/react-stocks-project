@@ -13,21 +13,21 @@ const stocksDetails = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-    //   .addCase((details.pending, (state) => {
-    //     state.loading = true;
-    //     state.message = 'Loading...';
-    //   }))
-      .addCase((details.fulfilled, (state, action) => {
+      .addCase(details.pending, (state) => {
+        state.loading = true;
+        state.message = 'Loading...';
+      })
+      .addCase(details.fulfilled, (state, action) => {
         state.loading = false;
         state.message = 'Successful';
         state.isSuccess = true;
         state.data = action.payload;
-      }))
-    //   .addCase((details.rejected, (state) => {
-    //     state.loading = false;
-    //     state.message = 'Error occured in fetching details';
-    //     state.isSuccess = false;
-    //   }));
+      })
+      .addCase(details.rejected, (state) => {
+        state.loading = false;
+        state.message = 'Error occured in fetching details';
+        state.isSuccess = false;
+      });
   },
 
 });
