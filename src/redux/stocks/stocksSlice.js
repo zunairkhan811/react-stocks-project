@@ -8,14 +8,26 @@ const initialState = {
   loading: false,
 };
 
-const newBooks = (payload) => {
-  
-};
 const stocks = createSlice({
   name: 'Stocks',
   initialState,
   extraReducers: (builder) => {
-    
+    builder
+     .addCase((fetchStocksData.pending,(state)=>{
+        state.loading = true;
+        state.message = 'Loading...'
+     }))
+     .addCase((fetchStocksData.fulfilled,(state,action)=>{
+        state.loading = false;
+        state.message = 'Successful';
+        state.isSuccess = true;
+        state.data = action.payload;
+     }))
+     .addCase((fetchStocksData.rejected,(state,action)=>{
+        state.loading = false;
+        state.message = 'Rejected';
+        state.isSuccess = false;
+     }))
   },
 
 });
