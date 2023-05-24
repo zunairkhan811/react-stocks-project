@@ -3,9 +3,9 @@ import details from './DetailsApi';
 
 const initialState = {
   data: [],
-  isSuccess: false,
+  isError: false,
   message: '',
-  loading: false,
+  isLoading: false,
 };
 
 const stocksDetails = createSlice({
@@ -14,19 +14,19 @@ const stocksDetails = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(details.pending, (state) => {
-        state.loading = true;
+        state.isError = false;
+        state.isLoading = true;
         state.message = 'Loading...';
       })
       .addCase(details.fulfilled, (state, action) => {
-        state.loading = false;
+        state.isLoading = false;
         state.message = 'Successful';
-        state.isSuccess = true;
         state.data = action.payload;
       })
       .addCase(details.rejected, (state) => {
-        state.loading = false;
+        state.isLoading = false;
         state.message = 'Error occured in fetching details';
-        state.isSuccess = false;
+        state.isError = true;
       });
   },
 

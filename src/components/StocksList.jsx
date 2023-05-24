@@ -2,12 +2,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import fetchStocksData from '../redux/stocks/fetchApi';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const StocksList = () => {
+  const navigate = useNavigate()
   const [searchText, setSearchText] = useState('');
   const dispatch = useDispatch();
   const { data, message, isLoading, isError } = useSelector((store) => store.stocksList);
-  console.log(data);
+  // console.log(data);
   useEffect(() => {
     if (data.length === 0) {
       dispatch(fetchStocksData());
@@ -48,7 +50,7 @@ const StocksList = () => {
             })
               .map((element)=>(
               
-                <div key={element.symbol} className='list-items'>
+                <div key={element.symbol} className='list-items' onClick={()=>navigate(`/stockDetails/${element.symbol}`)}>
                   <h1>Symbol - {element.symbol}</h1>
                   <h2>Company Name - {element.companyName}</h2>
                 </div>

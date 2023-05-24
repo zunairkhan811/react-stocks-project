@@ -47,6 +47,8 @@ nav a:hover{
 .list-heading-container h1{
   color: white;
   margin-bottom: 8px;
+  font-size: 40px;
+  text-align: center;
 }
 
 .list-heading-container input{
@@ -74,6 +76,7 @@ nav a:hover{
   width: 50%;
   height: 200px;
   padding: 5px;
+  text-align: center;
   border: 1px solid white;
   color: white;
   cursor: pointer;
@@ -84,3 +87,61 @@ nav a:hover{
 .list-items:nth-child(4n-2){
   background-color: blueviolet;
 }
+
+.details-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 20px;
+  padding: 30px;
+}
+
+.details-container ul{
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.details-container ul li{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px;
+  border: 1px solid whitesmoke;
+}
+
+.details-container ul li:nth-child(even){
+  background-color: blueviolet;
+}
+.details-container ul li:nth-child(odd){
+  background-color: #e7415e;
+}
+
+.details-container ul li h3{
+  font-family: initial, sans-serif;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .list-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .list-items{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .details-container ul li{
+    flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .details-container ul li h3{
+    margin: 10px;
+  }
+}
+
