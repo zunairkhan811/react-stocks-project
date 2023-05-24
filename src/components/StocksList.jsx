@@ -1,5 +1,5 @@
 
-const stocksList = ()=>{
+const StocksList = ()=>{
     return(
         <div>
             <h1>hello list</h1>
@@ -7,4 +7,4 @@ const stocksList = ()=>{
     )
 }
 
-export default stocksList;
+export default StocksList;
