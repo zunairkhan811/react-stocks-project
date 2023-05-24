@@ -1,10 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import booklists from './books/myBookSlice';
-import myCategorySlice from './categories/categoriesSlice';
+import stocksSlice from './stocks/stocksSlice';
+import stocksDetailsSlice from './stocksdetails/stocksDetailsSlice';
 
 const rootReducer = combineReducers({
-  books: booklists,
-  categories: myCategorySlice,
+  stocksList: stocksSlice,
+  stocksDetails: stocksDetailsSlice,
 });
 
 export default rootReducer;
