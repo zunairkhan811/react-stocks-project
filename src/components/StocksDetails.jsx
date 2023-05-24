@@ -1,43 +1,44 @@
-import { useParams } from "react-router-dom";
-import details from "../redux/stocksdetails/DetailsApi";
-import { useSelector } from "react-redux";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import details from '../redux/stocksdetails/DetailsApi';
 
 const StocksDetails = () => {
-   const {symbol} = useParams();
-   const dispatch = useDispatch();
-   const { data, isError, message, isLoading} = useSelector((state)=>state.stocksDetails);
-   console.log(data);
-   useEffect(()=>{
-      dispatch(details(symbol))
-    
-   },[dispatch,symbol])
+  const { symbol } = useParams();
+  const dispatch = useDispatch();
+  const {
+    data, isError, message, isLoading,
+  } = useSelector((state) => state.stocksDetails);
+  useEffect(() => {
+    dispatch(details(symbol));
+  }, [dispatch, symbol]);
 
-   if(isLoading){
-    return(
-      <div className='list-heading-container'>
+  if (isLoading) {
+    return (
+      <div className="list-heading-container">
         <h1>{message}</h1>
       </div>
-    )
+    );
   }
-  if(isError){
-    return(
-      <div className='list-heading-container'>
+  if (isError) {
+    return (
+      <div className="list-heading-container">
         <h1>{message}</h1>
       </div>
-    )
+    );
   }
 
-
-
-   return(
+  return (
     <>
       <div className="list-heading-container">
-        <h1>{symbol} Stock Details</h1>
+        <h1>
+          {symbol}
+          {' '}
+          Stock Details
+        </h1>
       </div>
       <div className="details-container">
-        {data.map((item)=>(
+        {data.map((item) => (
           <ul key={item.symbol}>
             <li>
               <h3>
@@ -120,16 +121,13 @@ const StocksDetails = () => {
               </h3>
             </li>
           </ul>
-          
+
         ))}
       </div>
-      
+
     </>
 
-   )
-  
-}
-  
-
+  );
+};
 
 export default StocksDetails;

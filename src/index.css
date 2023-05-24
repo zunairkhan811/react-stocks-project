@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: 'Lato', Helvetica, sans-serif;
   background: #d626a1;
 }
 
-nav{
+nav {
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -19,56 +20,54 @@ nav{
   align-items: center;
 }
 
-nav a{
+nav a {
   font-size: 30px;
   text-decoration: none;
   color: white;
   transition: all 0.5s;
 }
 
-nav a:hover{
+nav a:hover {
   transform: scale(1.4);
 }
 
-.list-main-container{
+.list-main-container {
   padding: 40px;
   border-top: 2px solid #f7d5d5;
 }
 
-.list-heading-container{
+.list-heading-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   justify-content: center;
-  
 }
 
-.list-heading-container h1{
+.list-heading-container h1 {
   color: white;
   margin-bottom: 8px;
   font-size: 40px;
   text-align: center;
 }
 
-.list-heading-container input{
+.list-heading-container input {
   border-radius: 8px;
   padding: 8px;
   border: none;
   outline: none;
 }
 
-.list-container{
+.list-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
   margin-top: 20px;
-  
 }
 
-.list-items{
+.list-items {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,11 +83,11 @@ nav a:hover{
 }
 
 .list-items:nth-child(4n-1),
-.list-items:nth-child(4n-2){
+.list-items:nth-child(4n-2) {
   background-color: blueviolet;
 }
 
-.details-container{
+.details-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,13 +97,13 @@ nav a:hover{
   padding: 30px;
 }
 
-.details-container ul{
+.details-container ul {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
 }
 
-.details-container ul li{
+.details-container ul li {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -112,36 +111,38 @@ nav a:hover{
   border: 1px solid whitesmoke;
 }
 
-.details-container ul li:nth-child(even){
+.details-container ul li:nth-child(even) {
   background-color: blueviolet;
 }
-.details-container ul li:nth-child(odd){
+
+.details-container ul li:nth-child(odd) {
   background-color: #e7415e;
 }
 
-.details-container ul li h3{
-  font-family: initial, sans-serif;
+.details-container ul li h3 {
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
 
 @media screen and (max-width: 768px) {
-  .list-container{
+  .list-container {
     flex-direction: column;
     align-items: center;
   }
-  .list-items{
+
+  .list-items {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 368px) {
-  .details-container ul li{
+  .details-container ul li {
     flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    justify-content: center;
+    align-items: center;
   }
-  .details-container ul li h3{
+
+  .details-container ul li h3 {
     margin: 10px;
   }
 }
-
