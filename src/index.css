@@ -1,5 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+  font-family: 'Lato', Helvetica, sans-serif;
+  background: #d626a1;
+}
+
+.list-main-container{
+  padding: 40px;
+  border: 2px solid brown;
+}
+
+.list-heading-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  justify-content: center;
+  
+}
+
+.list-heading-container h1{
+  color: white;
+  margin-bottom: 8px;
+}
+
+.list-heading-container input{
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+  outline: none;
 }

@@ -9,7 +9,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<StocksList />} />
-        <Route path="/:symbol" element={<StocksDetails />} />
+        <Route path="/stockDetails/:symbol" element={<StocksDetails />} />
       </Routes>
     </BrowserRouter>
   );

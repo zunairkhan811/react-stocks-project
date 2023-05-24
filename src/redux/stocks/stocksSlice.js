@@ -3,9 +3,9 @@ import fetchStocksData from './fetchApi';
 
 const initialState = {
   data: [],
-  isSuccess: false,
   message: '',
-  loading: false,
+  isLoading: false,
+  isError: false,
 };
 
 const stocks = createSlice({
@@ -14,19 +14,19 @@ const stocks = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchStocksData.pending, (state) => {
-        state.loading = true;
+        state.isError = false;
+        state.isLoading = true;
         state.message = 'Loading...';
       })
       .addCase(fetchStocksData.fulfilled, (state, action) => {
-        state.loading = false;
+        state.isLoading = false;
         state.message = action.payload;
-        state.isSuccess = true;
         state.data = action.payload;
       })
       .addCase(fetchStocksData.rejected, (state) => {
-        state.loading = false;
+        state.isLoading = false;
         state.message = 'Error occured in fetching data';
-        state.isSuccess = false;
+        state.isError = true;
       });
   },
 
