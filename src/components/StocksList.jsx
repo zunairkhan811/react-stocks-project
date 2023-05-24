@@ -16,14 +16,14 @@ const StocksList = () => {
 
   if(isLoading){
     return(
-      <div>
+      <div className='list-heading-container'>
         <h1>{message}</h1>
       </div>
     )
   }
   if(isError){
     return(
-      <div>
+      <div className='list-heading-container'>
         <h1>{message}</h1>
       </div>
     )
@@ -37,22 +37,26 @@ const StocksList = () => {
           <input type="text" placeholder='Search with symbol...' onChange=
           {(e)=>setSearchText(e.target.value)} />
         </div>
-        {data.filter((item)=>{
-            if(searchText === ''){
-              return item;
-            }
-            if(item.symbol.toLowerCase().includes(searchText.toLowerCase())){
-              return item;
-            }
-          })
-            .map((element)=>(
-              <div key={element.symbol} className='stock-container'>
-                <h1>Symbol - {element.symbol}</h1>
-                <h2>Company Name - {element.companyName}</h2>
-              </div>
+        <div className='list-container'>
+          {data.filter((item)=>{
+              if(searchText === ''){
+                return item;
+              }
+              if(item.symbol.toLowerCase().includes(searchText.toLowerCase())){
+                return item;
+              }
+            })
+              .map((element)=>(
+              
+                <div key={element.symbol} className='list-items'>
+                  <h1>Symbol - {element.symbol}</h1>
+                  <h2>Company Name - {element.companyName}</h2>
+                </div>
 
-            ))
-        }
+              ))
+          }
+        </div>
+        
 
       </div>
       

@@ -10,16 +10,36 @@ body{
   background: #d626a1;
 }
 
+nav{
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+}
+
+nav a{
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s;
+}
+
+nav a:hover{
+  transform: scale(1.4);
+}
+
 .list-main-container{
   padding: 40px;
-  border: 2px solid brown;
+  border-top: 2px solid #f7d5d5;
 }
 
 .list-heading-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 100%;
   justify-content: center;
   
 }
@@ -34,4 +54,33 @@ body{
   padding: 8px;
   border: none;
   outline: none;
+}
+
+.list-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 20px;
+  
+}
+
+.list-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 200px;
+  padding: 5px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  background-color: #e7415e;
+}
+
+.list-items:nth-child(4n-1),
+.list-items:nth-child(4n-2){
+  background-color: blueviolet;
 }
