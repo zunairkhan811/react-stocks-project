@@ -72,7 +72,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Coming Soon]()
+- [Live](https://zunairkhan811.github.io/react-stocks-project/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
