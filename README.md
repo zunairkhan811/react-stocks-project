@@ -37,6 +37,8 @@
 
 **[React-Stocks-Project]** In this project Stocks are fetched using API and their details are also fetched using API and details of the specific stock are shown when user click on that stock. User can also filter stocks using search Bar.
 
+- [Video Link about Project] <a href="https://www.loom.com/share/ad61ac8427ca4c649013a752258bfc61"><button type="button" color:red background: white>Click Here</button></a>
+
 ## 🛠 Built With <a name="HTML, CSS, Javascript and React-Redux"></a>
 - HTML
 - CSS

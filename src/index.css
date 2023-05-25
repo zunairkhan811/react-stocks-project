@@ -94,7 +94,7 @@ nav a:hover {
 .list-items-icon i {
   position: relative;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .list-items:nth-child(4n-1),
