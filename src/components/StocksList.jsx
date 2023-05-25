@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import fetchStocksData from '../redux/stocks/fetchApi';
 
 const StocksList = () => {
@@ -55,6 +57,10 @@ const StocksList = () => {
             .map((element) => (
 
               <div role="presentation" key={element.symbol} className="list-items" onClick={() => navigate(`/stockDetails/${element.symbol}`)}>
+                <div className="list-items-icon">
+                  <i><FontAwesomeIcon icon={faArrowAltCircleRight} /></i>
+                </div>
+
                 <h1>
                   Symbol -
                   {element.symbol}
