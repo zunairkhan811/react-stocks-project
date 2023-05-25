@@ -5,7 +5,7 @@ import StocksDetails from './components/StocksDetails';
 
 function App() {
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="/react-stocks-project">
       <Navbar />
       <Routes>
         <Route path="/" element={<StocksList />} />

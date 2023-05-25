@@ -3,6 +3,7 @@
 <div align="center">
 
   <h3><b>React Stocks Project</b></h3>
+  <img src="./src/images/react-stocks-screenshot.png" alt="project screenshot"/>
 
 </div>
 
