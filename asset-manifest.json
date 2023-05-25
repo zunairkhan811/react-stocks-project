@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-stocks-project/static/css/main.b837afe0.css",
-    "main.js": "/react-stocks-project/static/js/main.21172ff2.js",
+    "main.css": "/react-stocks-project/static/css/main.ed992eb6.css",
+    "main.js": "/react-stocks-project/static/js/main.41127c27.js",
     "index.html": "/react-stocks-project/index.html",
-    "main.b837afe0.css.map": "/react-stocks-project/static/css/main.b837afe0.css.map",
-    "main.21172ff2.js.map": "/react-stocks-project/static/js/main.21172ff2.js.map"
+    "main.ed992eb6.css.map": "/react-stocks-project/static/css/main.ed992eb6.css.map",
+    "main.41127c27.js.map": "/react-stocks-project/static/js/main.41127c27.js.map"
   },
   "entrypoints": [
-    "static/css/main.b837afe0.css",
-    "static/js/main.21172ff2.js"
+    "static/css/main.ed992eb6.css",
+    "static/js/main.41127c27.js"
   ]
 }
