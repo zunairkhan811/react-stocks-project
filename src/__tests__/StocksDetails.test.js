@@ -39,7 +39,7 @@ describe('StocksDetails Component', () => {
     render(
       <Provider store={mockStore}>
         <StocksDetails />
-      </Provider>
+      </Provider>,
     );
     expect(screen.getByRole('heading', { name: new RegExp(mockSymbol) })).toBeInTheDocument();
   });

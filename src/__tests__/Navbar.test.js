@@ -8,7 +8,7 @@ jest.mock('react-router-dom', () => ({
 describe('Navbar', () => {
   test('renders navigation links with icons', () => {
     render(
-        <Navbar />
+      <Navbar />,
     );
 
     const arrowLeftIcon = screen.getByTestId('mock-test1');

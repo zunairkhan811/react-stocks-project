@@ -39,7 +39,7 @@ const StocksList = () => {
         <div className="list-heading-container">
           <h1>NASDAQ Stocks</h1>
           <input
-            data-testid= "searchTest"
+            data-testid="searchTest"
             type="text"
             placeholder="Search with symbol..."
             onChange={(e) => setSearchText(e.target.value)}

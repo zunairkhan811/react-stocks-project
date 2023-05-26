@@ -1,10 +1,9 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { BrowserRouter as Router, useNavigate } from 'react-router-dom';
 import StocksList from '../components/StocksList';
-import fetchStocksData from '../redux/stocks/fetchApi';
 
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
@@ -19,7 +18,7 @@ jest.mock('react-router-dom', () => ({
 jest.mock('../redux/stocks/fetchApi', () => jest.fn());
 
 jest.mock('@fortawesome/react-fontawesome', () => ({
-  FontAwesomeIcon: () => <span data-testid="arrowRight"></span>,
+  FontAwesomeIcon: () => <span data-testid="arrowRight" />,
 }));
 
 describe('StocksList', () => {
@@ -41,26 +40,27 @@ describe('StocksList', () => {
     });
 
     const mockNavigate = jest.fn();
-    require('react-router-dom').useNavigate.mockReturnValue(mockNavigate);
+    useNavigate.mockReturnValue(mockNavigate);
 
     render(
       <Router>
         <StocksList />
-      </Router>
+      </Router>,
     );
 
     const searchInput = screen.getByTestId('searchTest');
     fireEvent.change(searchInput, { target: { value: 'AAPL' } });
-
     const stockItem = screen.getByTestId('testItem');
     fireEvent.click(stockItem);
-
-    // expect(mockDispatch).toHaveBeenCalledTimes(1);
-    // expect(fetchStocksData).toHaveBeenCalledTimes(1);
-    // expect(mockNavigate).toHaveBeenCalledTimes(1);
-    // expect(mockNavigate).toHaveBeenCalledWith('/stockDetails/AAPL');
-
     const icon = screen.getByTestId('arrowRight');
     expect(icon).toBeInTheDocument();
   });
 });
+
+StocksList.propTypes = {
+  children: PropTypes.node,
+};
+
+StocksList.defaultProps = {
+  children: null,
+};
