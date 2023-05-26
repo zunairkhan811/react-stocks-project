@@ -39,6 +39,7 @@ const StocksList = () => {
         <div className="list-heading-container">
           <h1>NASDAQ Stocks</h1>
           <input
+            data-testid= "searchTest"
             type="text"
             placeholder="Search with symbol..."
             onChange={(e) => setSearchText(e.target.value)}
@@ -56,9 +57,9 @@ const StocksList = () => {
           })
             .map((element) => (
 
-              <div role="presentation" key={element.symbol} className="list-items" onClick={() => navigate(`/stockDetails/${element.symbol}`)}>
+              <div data-testid="testItem" role="presentation" key={element.symbol} className="list-items" onClick={() => navigate(`/stockDetails/${element.symbol}`)}>
                 <div className="list-items-icon">
-                  <i><FontAwesomeIcon icon={faArrowAltCircleRight} /></i>
+                  <i><FontAwesomeIcon data-testid="arrowRight" icon={faArrowAltCircleRight} /></i>
                 </div>
 
                 <h1>

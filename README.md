@@ -192,8 +192,7 @@ If you like this feel free to follow me on github and give this project a star..
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- Thanks to the Microverse team for the great curriculum.
-- Thanks to the Code Reviewer(s) for the insightful feedbacks.
+- Thanks to [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio) for the original design idea.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
